@@ -1,0 +1,1013 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Para o Chefe 🧸</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧸</text></svg>"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,600;0,700;0,900;1,500;1,600&family=Karla:wght@400;500;600;700&family=Kalam:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ============ TOKENS ============ */
+      :root {
+        --cream: #f3f3f3;
+        --cream-deep: #eee1c6;
+        --cream-deeper: #e4d3ae;
+        --ink: #34261c;
+        --ink-soft: #6b5847;
+        --mustard: #c59e5b;
+        --mustard-deep: #c4841a;
+        --teal: #4b8377;
+        --teal-deep: #2b3c55;
+        --rose: #2b3c55;
+        --rose-deep: #c4841a;
+        --muzzle: #FBF9F2;
+        --nose: #8A4B33;
+        --stripe: #2A1E15;
+        --shadow: 0 14px 34px -14px rgba(52, 38, 28, 0.32);
+        --shadow-sm: 0 6px 16px -8px rgba(52, 38, 28, 0.28);
+        --radius: 18px;
+        --spine-x: 30px;
+        --wrap: 720px;
+      }
+      @media (min-width: 860px) {
+        :root {
+          --spine-x: 64px;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--ink);
+        font-family: "Karla", sans-serif;
+        font-size: 17px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        position: relative;
+        overflow-x: hidden;
+      }
+      /* subtle knit-dot paper texture */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: radial-gradient(var(--ink) 0.6px, transparent 0.6px);
+        background-size: 22px 22px;
+        opacity: 0.05;
+        pointer-events: none;
+        z-index: 0;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Fraunces", serif;
+        color: var(--ink);
+        margin: 0 0 0.4em;
+        line-height: 1.08;
+      }
+      p {
+        margin: 0 0 1em;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: var(--teal-deep);
+      }
+      button {
+        font-family: inherit;
+      }
+
+      :focus-visible {
+        outline: 3px solid var(--teal);
+        outline-offset: 3px;
+      }
+
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--rose-deep);
+        margin: 0 0 0.9em;
+      }
+
+      /* ============ HERO ============ */
+      .hero {
+        min-height: 100svh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 48px 24px;
+        position: relative;
+        z-index: 1;
+      }
+      .hero-inner {
+        max-width: 560px;
+      }
+      .mascot {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+      }
+      .m-ear {
+        fill: #E3A730;
+        stroke: var(--ink);
+        stroke-width: 2.5;
+      }
+      .m-ear-inner {
+        fill: var(--rose);
+      }
+      .m-head {
+        fill: #E3A730;
+        stroke: var(--ink);
+        stroke-width: 3;
+      }
+      .m-belly {
+        fill: var(--cream);
+      }
+      .m-stitch {
+        stroke: var(--ink);
+        stroke-width: 2;
+        fill: none;
+        stroke-linecap: round;
+      }
+      .m-eye {
+        fill: var(--ink);
+      }
+      .m-eye-shine{fill:#fff;}
+      .m-cheek {
+        fill: var(--rose);
+        opacity: 0.55;
+      }
+      .m-nose{fill:var(--nose); stroke:var(--stripe); stroke-width:1.5; stroke-linejoin:round;}
+        .m-muzzle{fill:var(--muzzle); stroke:var(--stripe); stroke-width:2;}
+      .m-mouth {
+        stroke: var(--ink);
+        stroke-width: 2;
+        fill: none;
+        stroke-linecap: round;
+      }
+      .m-arm {
+        fill: #E3A730;
+        stroke: var(--ink);
+        stroke-width: 2.5;
+      }
+
+      .hero-mascot {
+        width: 132px;
+        height: 132px;
+        margin: 0 auto 18px;
+        animation: wiggle 4.2s ease-in-out infinite;
+        filter: drop-shadow(var(--shadow-sm));
+      }
+      @keyframes wiggle {
+        0%,
+        100% {
+          transform: rotate(-3deg) translateY(0);
+        }
+        50% {
+          transform: rotate(3deg) translateY(-6px);
+        }
+      }
+      .hero h1 {
+        font-size: clamp(2.2rem, 6vw, 3.4rem);
+        font-weight: 700;
+      }
+      .hero h1 span {
+        color: var(--rose-deep);
+        font-style: italic;
+        font-weight: 500;
+      }
+      .hero-sub {
+        font-size: 1.05rem;
+        color: var(--ink-soft);
+        max-width: 440px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .scroll-cue {
+        margin-top: 18px;
+        background: none;
+        border: 2px solid var(--ink);
+        color: var(--ink);
+        padding: 10px 22px;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        cursor: pointer;
+        transition:
+          background 0.2s ease,
+          color 0.2s ease,
+          transform 0.2s ease;
+      }
+      .scroll-cue:hover {
+        background: var(--ink);
+        color: var(--cream);
+        transform: translateY(2px);
+      }
+
+      /* ============ MAIN / THREAD SPINE ============ */
+      main {
+        position: relative;
+        z-index: 1;
+      }
+      .thread-spine {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: var(--spine-x);
+        width: 2px;
+        background-image: repeating-linear-gradient(
+          to bottom,
+          var(--rose) 0 10px,
+          transparent 10px 22px
+        );
+        z-index: 0;
+        pointer-events: none;
+      }
+      #threadMascot {
+        position: absolute;
+        left: var(--spine-x);
+        top: 0;
+        width: 38px;
+        height: 38px;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        transition: top 0.08s linear;
+        filter: drop-shadow(var(--shadow-sm));
+        pointer-events: none;
+      }
+
+      .chapter {
+        position: relative;
+        z-index: 1;
+        padding: 58px 24px 72px calc(var(--spine-x) + 34px);
+        max-width: calc(var(--wrap) + var(--spine-x) + 34px);
+        margin: 0 auto;
+      }
+      .chapter-alt {
+        background: var(--cream-deep);
+      }
+      .chapter-marker {
+        position: absolute;
+        left: var(--spine-x);
+        top: 74px;
+        transform: translate(-50%, -50%);
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: var(--cream);
+        border: 3px solid var(--ink);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Fraunces", serif;
+        font-weight: 700;
+        font-size: 0.95rem;
+        z-index: 2;
+      }
+      .chapter-alt .chapter-marker {
+        background: var(--cream-deep);
+      }
+      .chapter h2 {
+        font-size: clamp(1.6rem, 4vw, 2.3rem);
+        font-weight: 600;
+      }
+      .chapter-lead {
+        color: var(--ink-soft);
+        max-width: 44ch;
+      }
+
+      .block {
+        margin-top: 40px;
+      }
+      .block h3 {
+        font-size: 1.05rem;
+        font-family: "Karla", sans-serif;
+        font-weight: 700;
+        color: var(--teal-deep);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 16px;
+      }
+
+      /* reveal-on-scroll */
+      .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ============ PHOTOS ============ */
+      .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 18px;
+      }
+      .polaroid {
+        background: #fff;
+        padding: 10px 10px 16px;
+        border-radius: 6px;
+        box-shadow: var(--shadow-sm);
+        margin: 0;
+        transform: rotate(var(--r, -2deg));
+        transition: transform 0.25s ease;
+      }
+      .polaroid:nth-child(3n) {
+        --r: 2deg;
+      }
+      .polaroid:nth-child(3n + 1) {
+        --r: -2.5deg;
+      }
+      .polaroid:nth-child(3n + 2) {
+        --r: 1.5deg;
+      }
+      .polaroid:hover {
+        transform: rotate(0deg) scale(1.03);
+      }
+      .polaroid img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 2px;
+      }
+      .polaroid-placeholder {
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 2px;
+        background: repeating-linear-gradient(
+          135deg,
+          var(--cream-deep) 0 8px,
+          var(--cream-deeper) 8px 16px
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6rem;
+      }
+      .polaroid figcaption {
+        font-family: "Kalam", cursive;
+        font-size: 0.85rem;
+        text-align: center;
+        color: var(--ink-soft);
+        padding-top: 8px;
+      }
+
+      /* ============ STORIES ============ */
+      .story-list {
+        display: grid;
+        gap: 14px;
+      }
+      .story-card {
+        background: var(--cream);
+        border: 1px solid var(--cream-deeper);
+        border-left: 5px solid var(--mustard);
+        border-radius: 12px;
+        padding: 18px 20px;
+        box-shadow: var(--shadow-sm);
+      }
+      .chapter-alt .story-card {
+        background: #fff;
+      }
+      .story-card h4 {
+        margin: 0 0 6px;
+        font-family: "Fraunces", serif;
+        font-size: 1.08rem;
+        font-weight: 600;
+      }
+      .story-card p {
+        margin: 0;
+        color: var(--ink-soft);
+      }
+
+      /* ============ MEMORIES ============ */
+      .memory-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 12px;
+      }
+      .memory-list li {
+        position: relative;
+        padding-left: 26px;
+        color: var(--ink-soft);
+      }
+      .memory-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--rose-deep);
+      }
+
+      /* ============ QUOTES / TRAITS ============ */
+      .quote-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        margin-top: 28px;
+      }
+      .quote-card {
+        background: #fff;
+        border-radius: var(--radius);
+        padding: 26px 22px 20px;
+        box-shadow: var(--shadow-sm);
+      }
+      .quote-mark {
+        font-family: "Fraunces", serif;
+        font-style: italic;
+        font-size: 2.2rem;
+        color: var(--mustard-deep);
+        line-height: 0.5;
+        display: block;
+        margin-bottom: 10px;
+      }
+      .quote-card p {
+        font-family: "Fraunces", serif;
+        font-size: 1.08rem;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+      .quote-who {
+        font-size: 0.82rem;
+        color: var(--ink-soft);
+        font-weight: 700;
+      }
+
+      .trait-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 34px;
+      }
+      .trait-pill {
+        padding: 8px 16px;
+        border-radius: 999px;
+        font-size: 0.86rem;
+        font-weight: 600;
+        border: 2px solid;
+      }
+      .trait-pill:nth-child(4n + 1) {
+        border-color: var(--mustard-deep);
+        color: var(--mustard-deep);
+      }
+      .trait-pill:nth-child(4n + 2) {
+        border-color: var(--teal-deep);
+        color: var(--teal-deep);
+      }
+      .trait-pill:nth-child(4n + 3) {
+        border-color: var(--rose-deep);
+        color: var(--rose-deep);
+      }
+      .trait-pill:nth-child(4n) {
+        border-color: var(--ink);
+        color: var(--ink);
+      }
+
+      /* ============ MURAL ============ */
+      .mural-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+      }
+      .note {
+        position: relative;
+        padding: 20px 18px 16px;
+        border-radius: 4px;
+        font-family: "Kalam", cursive;
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.2s ease;
+      }
+      .note:hover {
+        transform: translateY(-4px) rotate(0deg) !important;
+      }
+      .note::before {
+        content: "";
+        position: absolute;
+        top: -9px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--rose-deep);
+        box-shadow: var(--shadow-sm);
+      }
+      .note-a {
+        background: #fdf6e3;
+      }
+      .note-b {
+        background: #f3e7d8;
+      }
+      .note-c {
+        background: #f9e4e9;
+      }
+      .note-d {
+        background: #e4f0ea;
+      }
+      .note p {
+        margin: 0 0 10px;
+        font-size: 1.02rem;
+        color: var(--ink);
+      }
+      .note-author {
+        font-family: "Karla", sans-serif;
+        font-weight: 700;
+        font-size: 0.8rem;
+        color: var(--ink-soft);
+      }
+
+      /* ============ FINAL MESSAGE ============ */
+      .final-message .chapter-lead {
+        max-width: none;
+      }
+      .final-text {
+        max-width: 60ch;
+        margin-top: 24px;
+      }
+      .final-text p {
+        font-size: 1.08rem;
+        color: var(--ink-soft);
+      }
+      .final-text p:first-of-type::first-letter {
+        font-family: "Fraunces", serif;
+        font-size: 3.2rem;
+        font-weight: 700;
+        color: var(--mustard-deep);
+        float: left;
+        line-height: 0.8;
+        margin: 0.06em 0.08em 0 0;
+      }
+
+      /* ============ SURPRISE ============ */
+      .surprise {
+        text-align: center;
+      }
+      .surprise .chapter-marker {
+        left: var(--spine-x);
+      }
+      .surprise-btn {
+        margin-top: 10px;
+        background: var(--rose-deep);
+        color: #fff;
+        border: none;
+        padding: 16px 30px;
+        border-radius: 999px;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: var(--shadow-sm);
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease;
+      }
+      .surprise-btn:hover {
+        background: var(--rose);
+        transform: translateY(-2px) scale(1.02);
+      }
+      .surprise-btn.is-done {
+        opacity: 0;
+        pointer-events: none;
+        height: 0;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .surprise-reveal {
+        position: relative;
+        margin-top: 34px;
+        max-width: 520px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .surprise-reveal.hidden {
+        display: none;
+      }
+      .surprise-message {
+        font-family: "Fraunces", serif;
+        font-style: italic;
+        font-weight: 500;
+        font-size: clamp(1.2rem, 3.2vw, 1.6rem);
+        color: var(--ink);
+        background: #fff;
+        border-radius: var(--radius);
+        padding: 34px 28px;
+        box-shadow: var(--shadow);
+      }
+      .surprise-mascot {
+        width: 96px;
+        height: 96px;
+        margin: 22px auto 0;
+      }
+
+      .confetti {
+        position: absolute;
+        inset: -40px 0 auto 0;
+        height: 0;
+        overflow: visible;
+        pointer-events: none;
+      }
+      .confetti span {
+        position: absolute;
+        top: -20px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        animation: confetti-fall 2.6s ease-in forwards;
+      }
+      @keyframes confetti-fall {
+        to {
+          transform: translateY(240px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      /* ============ FOOTER ============ */
+      .site-footer {
+        text-align: center;
+        padding: 48px 24px 60px;
+        color: var(--ink-soft);
+        font-size: 0.9rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      @media (max-width: 640px) {
+        .chapter {
+          padding-left: calc(var(--spine-x) + 22px);
+          padding-right: 18px;
+        }
+        .chapter-marker {
+          width: 36px;
+          height: 36px;
+          font-size: 0.82rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+        .hero-mascot {
+          animation: none;
+        }
+        #threadMascot {
+          transition: none;
+        }
+        .confetti span {
+          animation: none;
+          opacity: 0;
+        }
+        .polaroid,
+        .note,
+        .scroll-cue,
+        .surprise-btn {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- mascote reutilizável (definido uma vez, usado com <use>) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+        <symbol id="mascot" viewBox="0 0 120 120">
+        <circle class="m-arm" cx="16" cy="86" r="11"/>
+        <circle class="m-arm" cx="104" cy="86" r="11"/>
+        <!-- orelhas com pontinha escura -->
+        <circle class="m-ear" cx="22" cy="30" r="18"/>
+        <circle class="m-ear" cx="98" cy="30" r="18"/>
+        <ellipse class="m-ear-tip" cx="14" cy="17" rx="9" ry="6.5" transform="rotate(-30 14 17)"/>
+        <ellipse class="m-ear-tip" cx="106" cy="17" rx="9" ry="6.5" transform="rotate(30 106 17)"/>
+        <!-- cabeça -->
+        <circle class="m-head" cx="60" cy="64" r="46"/>
+        <!-- listras de tigre -->
+        <path class="m-stripe" d="M20 46 q10 -6 18 -2"/>
+        <path class="m-stripe" d="M18 62 q11 -4 20 2"/>
+        <path class="m-stripe" d="M100 46 q-10 -6 -18 -2"/>
+        <path class="m-stripe" d="M102 62 q-11 -4 -20 2"/>
+        <path class="m-stripe" d="M50 20 q10 -4 20 0"/>
+        <!-- focinho branco -->
+        <ellipse class="m-muzzle" cx="60" cy="88" rx="27" ry="21"/>
+        <!-- nariz -->
+        <path class="m-nose" d="M60 76 l9 8 q-9 8 -18 0 z"/>
+        <path class="m-mouth" d="M60 84 v6 M60 90 q-8 8 -16 3 M60 90 q8 8 16 3"/>
+        <!-- olhos -->
+        <circle class="m-eye" cx="42" cy="66" r="8"/>
+        <circle class="m-eye" cx="78" cy="66" r="8"/>
+        <circle class="m-eye-shine" cx="44.5" cy="63" r="2.2"/>
+        <circle class="m-eye-shine" cx="80.5" cy="63" r="2.2"/>
+        </symbol>
+    </defs>
+    </svg>
+
+    <header class="hero" id="hero">
+      <div class="hero-inner">
+        <div class="hero-mascot">
+          <svg class="mascot"><use href="#mascot" /></svg>
+        </div>
+        <p class="eyebrow" style="color: #2b3c55;">uma mensagem pra você</p>
+        <h1>Eai <span id="heroName">Nome</span>.</h1>
+        <p class="hero-sub" id="heroSub"></p>
+        <button
+          class="scroll-cue"
+          type="button"
+          onclick="
+            document
+              .getElementById('chapter-momentos')
+              .scrollIntoView({ behavior: 'smooth' })
+          "
+        >
+          continuar ↓
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <div class="thread-spine" aria-hidden="true"></div>
+      <svg id="threadMascot" class="mascot" aria-hidden="true">
+        <use href="#mascot" />
+      </svg>
+
+      <section class="chapter" id="chapter-momentos">
+        <div class="chapter-marker">01</div>
+        <h2 class="reveal">Momentos que ficam</h2>
+
+        <div class="block">
+          <h3 class="reveal">Fotos</h3>
+          <div class="photo-grid reveal" id="photoGrid"></div>
+        </div>
+
+        <div class="block">
+          <h3 class="reveal"></h3>
+          <div class="story-list reveal" id="storyList"></div>
+        </div>
+      </section>
+
+      <section class="chapter" id="chapter-mural">
+        <div class="chapter-marker">03</div>
+        <h2 class="reveal">Mural da equipe</h2>
+        <p class="chapter-lead reveal">
+          Cada um deixou um pedacinho de carinho aqui.
+        </p>
+        <div class="mural-grid reveal" id="muralGrid"></div>
+      </section>
+
+      <section class="chapter chapter-alt final-message" style="margin-bottom: 80px;" id="chapter-final">
+        <div class="chapter-marker">04</div>
+        <h2 class="reveal">Antes de você ir...</h2>
+        <div class="final-text reveal" id="finalText"></div>
+      </section>
+    </main>
+
+    <script>
+      /* =========================================================================
+   EDITE SÓ AQUI. Tudo que aparece na página vem deste objeto.
+   Troque os textos de exemplo pelos reais antes de publicar / gravar na NFC.
+   ========================================================================= */
+      const CONFIG = {
+        nome: "Bruno", // nome do chefe — aparece no título da aba e no topo
+
+        heroSub:
+          "Como forma de despedida, preparamos uma página simples para que possa lembrar de alguns momentos especiais que vivemos na Catalyst.",
+
+        // FOTOS — deixe "src" vazio para mostrar um espaço reservado (para preencher depois)
+        fotos: [
+          { src: "images\\viagem-rio.jpeg", legenda: "Viagem no rio" },
+          { src: "images\\baby-shark.jpeg", legenda: "Fantasia de Baby Shark" },
+          { src: "images\\polaroid.jpeg", legenda: "Trabalho em equipe" },
+          { src: "images\\esp32.jpeg", legenda: "Surpresas inesperadas" },
+          { src: "images\\hackaton.jpeg", legenda: "Hackaton" },
+          {
+            src: "images\\polaroids.jpeg",
+            legenda: "Fotos polaroid",
+          },
+        ],
+
+        // HISTÓRIAS ENGRAÇADAS — título curto + o causo
+        historias: [
+            {
+                titulo: "Hackaton + Pizza Hut",
+                texto:
+                "Uma forma muito divertida de trabalhar e desenvolver novas habilidades",
+            },
+            {
+              titulo: "Happy Hours",
+              texto:
+                "Momento em que a gente tirava um tempo para comer alguns petiscos no cactus e falar um pouco da vida",
+            },
+            {
+                titulo: "Fantasia do Baby Shark",
+                texto: "As vezes o trabalho pode ser mais descontraído... e você sabe trazer isso no ponto certo",
+            },
+        ],
+
+        // LEMBRANÇAS MARCANTES — frases curtas, uma por linha
+        lembrancas: [
+          "A paciência pra explicar de novo, sem nunca fazer a gente se sentir mal por perguntar.",
+          "Aquele elogio simples que veio na hora certa.",
+          "O jeito de comemorar cada vitória do time, mesmo as pequenas.",
+          "Ter batido na mesa por nós quando precisou.",
+        ],
+
+        // FRASES MARCANTES — coisas que o chefe costumava dizer
+        frases: [
+          {
+            citacao:
+              "Escreva aqui uma frase marcante que ele(a) sempre repetia.",
+            quem: "dito em quase toda reunião",
+          },
+          {
+            citacao: "Outra frase ou bordão inesquecível.",
+            quem: "clássico do dia a dia",
+          },
+          {
+            citacao: "Um conselho que ficou.",
+            quem: "numa conversa de corredor",
+          },
+        ],
+
+        // MURAL — uma mensagem por pessoa do time
+        mural: [
+          {
+            autor: "Dri",
+            mensagem:
+              "Obrigada por ser o apoio para nosso crescimento. Que sua nova trajetória venha cheia de aprendizado e crescimento",
+          },
+          {
+            autor: "Bigatello",
+            mensagem:
+              "",
+          },
+          {
+              autor: "Camila",
+              mensagem: "",
+            },
+            {
+              autor: "Gui",
+              mensagem:
+                "Desejo muito sucesso com seu novo ciclo! Obrigado pelos ensinamentos, feedbacks e gestão.",
+            },
+          {
+            autor: "Ana",
+            mensagem: "",
+          },
+          {
+            autor: "Gabi",
+            mensagem:
+              "",
+          },
+        ],
+
+        // MENSAGEM FINAL — cada item é um parágrafo
+        mensagemFinal: [
+          "Gostaríamos de reconhecer seu esforço nos nossos projetos, sua atenção aos detalhes e aos nossos próprios gostos. Você foi além da gestão, foi um amigo por esse tempo, nos ajudou a ampliar nossas habilidades e reconhecer nossos defeitos. Nos deu muitas oportunidades e aprendeu junto. Sua gestão impactou nosso lado profissional, e sempre levaremos um pedacinho de você onde passarmos.",
+          "Esperamos que com esse presente possa lembrar da marca positiva que deixou enquanto trabalhamos juntos. Torcemos muito pelo seu sucesso e felicidade. Além disso, esperamos que seu novo ciclo permita muito desenvolvimento pessoal e profissional!   ",
+          "Obrigado por tudo! - Dri e Gui",
+        ],
+
+        // FRASE FINAL DA SURPRESA — use {NOME} onde quiser inserir o nome
+        fraseFinal:
+          "O trabalho muda, os caminhos mudam, mas as histórias que a gente constrói juntos ficam. Obrigado por tudo, {NOME}. ❤️",
+      };
+      /* ========================================================================= */
+
+      function personalizar(texto) {
+        return texto.replaceAll("{NOME}", CONFIG.nome);
+      }
+
+      document.title = `Para ${CONFIG.nome} 🧸`;
+      document.getElementById("heroName").textContent = CONFIG.nome;
+      document.getElementById("heroSub").textContent = personalizar(
+        CONFIG.heroSub,
+      );
+
+      // fotos
+      document.getElementById("photoGrid").innerHTML = CONFIG.fotos
+        .map(
+          (f) => `
+  <figure class="polaroid">
+    ${
+      f.src
+        ? `<img src="${f.src}" alt="${f.legenda || ""}">`
+        : `<div class="polaroid-placeholder">🧶</div>`
+    }
+    <figcaption>${f.legenda || ""}</figcaption>
+  </figure>
+`,
+        )
+        .join("");
+
+      // histórias
+      document.getElementById("storyList").innerHTML = CONFIG.historias
+        .map(
+          (h) => `
+  <div class="story-card">
+    <h4>${h.titulo}</h4>
+    <p>${h.texto}</p>
+  </div>
+`,
+        )
+        .join("");
+
+      // mural
+      const noteClasses = ["note-a", "note-b", "note-c", "note-d"];
+      document.getElementById("muralGrid").innerHTML = CONFIG.mural
+        .map((m, i) => {
+          const rot = ((i % 5) - 2) * 2.4 + (i % 2 ? 1.2 : -1.2);
+          const cls = noteClasses[i % noteClasses.length];
+          return `
+    <div class="note ${cls}" style="transform:rotate(${rot}deg)">
+      <p>${m.mensagem}</p>
+      <div class="note-author">— ${m.autor}</div>
+    </div>
+  `;
+        })
+        .join("");
+
+      // mensagem final
+      document.getElementById("finalText").innerHTML = CONFIG.mensagemFinal
+        .map((p) => `<p>${personalizar(p)}</p>`)
+        .join("");
+
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      // reveal-on-scroll
+      const revealEls = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window && !reduceMotion) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
+        );
+        revealEls.forEach((el) => io.observe(el));
+      } else {
+        revealEls.forEach((el) => el.classList.add("is-visible"));
+      }
+
+      // mascote andando na linha de costura
+      const threadMascot = document.getElementById("threadMascot");
+      const mainEl = document.querySelector("main");
+      function updateThreadMascot() {
+        const rect = mainEl.getBoundingClientRect();
+        const total = mainEl.offsetHeight;
+        const scrolled = Math.min(Math.max(-rect.top, 0), total);
+        const progress = total ? scrolled / total : 0;
+        threadMascot.style.top = progress * 100 + "%";
+      }
+      if (!reduceMotion) {
+        window.addEventListener("scroll", updateThreadMascot, {
+          passive: true,
+        });
+        window.addEventListener("resize", updateThreadMascot);
+        updateThreadMascot();
+      } else {
+        threadMascot.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
